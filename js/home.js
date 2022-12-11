@@ -3,12 +3,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
     addressBookList = getAddressBookDataFromStorage();
     document.querySelector(".person-count").textContent = addressBookList.length;
     createInnerHtml();
+    localStorage.removeItem("editPerson");
 });
 
 const getAddressBookDataFromStorage = () => {
     return localStorage.getItem('AddressBookList') ? JSON.parse(localStorage.getItem('AddressBookList')) : [];
 }
-
 
 const createInnerHtml = () => {
     const headerHtml = "<tr><th>Name</th><th>Address</th><th>State</th><th>City</th><th>Zip Code</th><th>Phone Number</th><th>Actions</th></tr>"
@@ -32,6 +32,7 @@ const createInnerHtml = () => {
     }
     document.querySelector("#display").innerHTML = innerHtml;
 };
+
 const remove = (node) => {
     let personData = addressBookList.find(perData => perData._name == node.id);
     if (!personData) return;
@@ -44,6 +45,6 @@ const remove = (node) => {
 const update = (node) => {
     let person = addressBookList.find((per) => per._name == node.id);
     if (!person) return;
-    localStorage.setItem("editEmp", JSON.stringify(person));
+    localStorage.setItem("editPerson", JSON.stringify(person));
     window.location.replace(siteProperties.addAddressBookPage);
 };

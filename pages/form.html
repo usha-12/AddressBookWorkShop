@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="../css/formstyle.css">
     <link rel="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="../js/form.js"></script>
+    <script src="../js/AddressBookDetails.js"></script>
+    <script src="../js/siteProperties.js"></script>
 </head>
+
 
 <body>
     <header class="header-content header">
@@ -19,7 +23,7 @@
         </div>
     </header>
     <div id="formId" class="form-content">
-        <form id="form" class="form" action="#" onreset="resetForm()" onsubmit="saveForm()">
+        <form id="form" class="form" action="#" onreset="resetForm()" onsubmit="saveForm(event)">
             <div class="form-head">
                 <div class="form-head-text">Person Address Form</div>
                 <a href="../pages/home.html"><img class="cancel-img" src="/assets/images/cancel.jpeg.jpeg" alt="cancel"></a>
@@ -40,21 +44,21 @@
                     <label for="city" class="label text">City</label>
                     <select class="select" name="city" id="city">
                         <option selected disabled>Select City</option>
-                        <option value="Vns">Varanasi</option>
-                        <option value="Gzd">Gaziyabad</option>
-                        <option value="Blr">Bangalore</option>
-                        <option value="Gkp">Gorkhpur</option>
-                        <option value="Del">Delhi</option>
+                        <option value="Varanasi">Varanasi</option>
+                        <option value="Ghaziabad">Ghaziabad</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Gorkhpur">Gorkhpur</option>
+                        <option value="Delhi">Delhi</option>
                     </select>
                 </div>
                 <div>
                     <label for="state" class="label text">State</label>
                     <select class="select" name="state" id="state">
                         <option selected disabled>Select State</option>
-                        <option value="UP">Uttar Pradesh</option>
-                        <option value="KA">Karnataka</option>
-                        <option value="BP">Bihar</option>
-                        <option value="Mg">Mangalore</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Mangalore">Mangalore</option>
                     </select>
                 </div>
                 <div class="zip">
@@ -76,8 +80,6 @@
             </div>
         </form>
     </div>
-    <script src="../js/form.js"></script>
-    <script src="../js/AddressBookDetails.js"></script>
 </body>
 
 </html>

@@ -129,6 +129,9 @@ tr:not(:first-child) {
 }
 
 td {
+
+
+    
     font: normal normal normal 14px/21px Roboto;
     letter-spacing: 0px;
     color: #3d3d3d;
