@@ -120,7 +120,6 @@ const setSelectedIndex = (id, index) => {
     const element = document.querySelector(id);
     element.selectedIndex = index;
 };
-
 const setaddressBookJSONObject = () => {
     addressBookContactJSONObject._name = getInputValueById('#name');
     addressBookContactJSONObject._address = getInputValueById('#address');
