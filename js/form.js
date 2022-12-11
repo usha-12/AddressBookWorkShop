@@ -121,6 +121,7 @@ const setSelectedIndex = (id, index) => {
     element.selectedIndex = index;
 };
 
+
 const setaddressBookJSONObject = () => {
     addressBookContactJSONObject._name = getInputValueById('#name');
     addressBookContactJSONObject._address = getInputValueById('#address');
@@ -129,6 +130,4 @@ const setaddressBookJSONObject = () => {
     addressBookContactJSONObject._zip = getInputValueById('#zip');
     addressBookContactJSONObject._phoneNumber = getInputValueById('#phoneNo');
     alert("Added Json Object : " + addressBookContactJSONObject._name);
-
-
 };
