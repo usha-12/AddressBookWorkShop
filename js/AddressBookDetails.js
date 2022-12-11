@@ -61,7 +61,6 @@ class AddressBookDetails {
         else
             throw "Invalid Number";
     }
-
     toString() {
         return "Id: " + this.id + "\nName: " + this.name + "\nAddress: " + this.address + "\nCity: " + this.city + "\nState: " + this.state + "\nZip: " + this.zip + "\nPhone Number: " + this.phoneNumber;
     }

@@ -1,4 +1,5 @@
 let addressBookContactJSONObject = {};
+let isUpdate = false;
 window.addEventListener('DOMContentLoaded', (event) => {
     const name = document.querySelector('#name');
     const nameOutput = document.querySelector('.text-error');
@@ -46,6 +47,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             phoneOutput.textContent = e;
         }
     });
+    checkForUpdate();
 });
 
 const saveForm = () => {
@@ -110,17 +112,17 @@ const resetForm = () => {
     setSelectedIndex('#zip', );
     setValue('#phoneNo', "");
 }
-
 const setValue = (id, value) => {
-    const element = document.getElementById(id);
+    const element = document.querySelector(id);
     element.value = value;
-}
+};
 
 const setSelectedIndex = (id, index) => {
     const element = document.querySelector(id);
     element.selectedIndex = index;
 };
-const setaddressBookJSONObject = () => {
+
+const getetaddressBookJSONObject = () => {
     addressBookContactJSONObject._name = getInputValueById('#name');
     addressBookContactJSONObject._address = getInputValueById('#address');
     addressBookContactJSONObject._city = getInputValueById('#city');
@@ -128,4 +130,21 @@ const setaddressBookJSONObject = () => {
     addressBookContactJSONObject._zip = getInputValueById('#zip');
     addressBookContactJSONObject._phoneNumber = getInputValueById('#phoneNo');
     alert("Added Json Object : " + addressBookContactJSONObject._name);
+};
+
+const checkForUpdate = () => {
+    const addressBookJson = localStorage.getItem("editEmp");
+    isUpdate = addressBookJson ? true : false;
+    if (!isUpdate) return;
+    addressBookContactJSONObject = JSON.parse(addressBookJson);
+    setForm();
+};
+
+const setForm = () => {
+    setValue("#name", addressBookContactJSONObject._name);
+    setValue("#address", addressBookContactJSONObject._address);
+    setValue("#city", addressBookContactJSONObject._city);
+    setValue("#state", addressBookContactJSONObject._state);
+    setValue("#zip", addressBookContactJSONObject._zip);
+    setValue("#phoneNo", addressBookContactJSONObject._phoneNumber);
 };
