@@ -69,6 +69,12 @@ body {
     letter-spacing: 0px;
     color: #42515f;
     opacity: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.person-count {
+    padding-left: 10px;
 }
 
 .add-button {
@@ -137,6 +143,7 @@ td:first-child {
 td img:first-child {
     margin-right: 10px;
 }
+
 td img {
     cursor: pointer;
 }

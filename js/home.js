@@ -1,11 +1,19 @@
+let addressBookList;
 window.addEventListener("DOMContentLoaded", (event) => {
+    addressBookList = getAddressBookDataFromStorage();
+    document.querySelector(".person-count").textContent = addressBookList.length;
     createInnerHtml();
 });
 
+const getAddressBookDataFromStorage = () => {
+    return localStorage.getItem('AddressBookList') ? JSON.parse(localStorage.getItem('AddressBookList')) : [];
+}
+
+
 const createInnerHtml = () => {
     const headerHtml = "<tr><th>Name</th><th>Address</th><th>State</th><th>City</th><th>Zip Code</th><th>Phone Number</th><th>Actions</th></tr>"
+    if (addressBookList.length == 0) return;
     let innerHtml = `${headerHtml}`
-    let addressBookList = createAddressBookJSON();
     for (const person of addressBookList) {
         innerHtml = `${innerHtml}
     <tr>
@@ -25,24 +33,6 @@ const createInnerHtml = () => {
     document.querySelector("#display").innerHTML = innerHtml;
 };
 
-const createAddressBookJSON = () => {
-    let addressBookListLocal = [{
-            _name: "Usha",
-            _address: "Rohini Secter -8",
-            _city: "Delhi",
-            _state: "New Delhi",
-            _zip: "110035",
-            _phoneNumber: "7974492345"
-
-        },
-        {
-            _name: "Tusar",
-            _address: "Maharashtra",
-            _city: "Maharashtra",
-            _state: "MH",
-            _zip: "560069",
-            _phoneNumber: "7894560389"
-        }
-    ];
-    return addressBookListLocal;
-};
+function remove(employeePayrollList) {
+    localStorage.removeItem(employeePayrollList);
+}
