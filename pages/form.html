@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Address Book Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="../css/formstyle.css">
+    <link rel="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header-content header">
+        <div class="logo-content">
+            <img src="/assets/images/addressbook.jpeg.jpeg" alt="Logo">
+            <div>
+                <span class="person-text">Address</span><br>
+                <span class="person-text address-book">Book</span>
+            </div>
+        </div>
+    </header>
+    <div id="formId" class="form-content">
+        <form id="form" class="form" action="#" onreset="resetForm()" onsubmit="saveForm()">
+            <div class="form-head">
+                <div class="form-head-text">Person Address Form</div>
+                <a href="/pages/home.html"><img class="cancel-img" src="/assets/images/cancel.jpeg.jpeg" alt="cancel"></a>
+            </div>
+            <div class="row-content">
+                <label class="label text" for="name">Full Name</label>
+                <input class="input" id="name" name="name" type="text" required/>
+                <error-output class="text-error" for="name"></error-output>
+            </div>
+
+            <div class="row-content">
+                <label class="label text" for="address">Address</label>
+                <textarea class="input" id="address" name="address" placeholder="" style="height: 50px;"> </textarea>
+                <error-output class="address-error" for="address"></error-output>
+            </div>
+            <div class="select-box">
+                <div>
+                    <label for="city" class="label text">City</label>
+                    <select class="select" name="city" id="city">
+                        <option selected disabled>Select City</option>
+                        <option value="Vns">Delhi</option>
+                        <option value="Gzd">Panipat</option>
+                        <option value="Blr">Punjab</option>
+                        <option value="Gkp">Sonipat</option>
+                        <option value="Del">Hisar</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="state" class="label text">State</label>
+                    <select class="select" name="state" id="state">
+                        <option selected disabled>Select State</option>
+                        <option value="UP">New Delhi</option>
+                        <option value="KA">Punjab</option>
+                        <option value="BP">Haryana</option>
+                        <option value="Mg">Madhya Pradesh</option>
+                    </select>
+                </div>
+                <div class="zip">
+                    <label for="zip" class="label text">Zip Code</label>
+                    <input class="select" type="number" name="zip" id="zip">
+                </div>
+            </div>
+            <div class="row-content">
+                <label class="label text" for="phoneNo">Phone Number</label>
+                <input class="input" id="phoneNo" name="phoneNo" type="text" required>
+                <error-output class="phoneNo-error" for="phoneNo"></error-output>
+            </div>
+
+            <div class="buttonParent">
+                <div class="submit-reset">
+                    <button class="submitButton button" type="submit" id="submit">Add</button>
+                    <button class="resetButton button" type="reset" id="reset">Reset</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="../js/form.js"></script>
+    <script src="../js/AddressBookDetails.js"></script>
+</body>
+
+</html>
