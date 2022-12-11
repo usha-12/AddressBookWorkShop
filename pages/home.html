@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/homepagestyle.css">
@@ -13,14 +14,23 @@
 <body>
     <header class="header-content header">
         <div class="logo-content">
-            <img src="/assets/images/addressbook.jpeg.jpeg" alt="Logo">
+            <img src="/assets//images/addressbook.jpeg.jpeg" alt="Logo">
             <div>
                 <span class="person-text">Address</span><br>
                 <span class="person-text address-book">Book</span>
             </div>
         </div>
     </header>
-
+    <div class="main-content">
+        <div class="header-content">
+            <div class="book-detail-text">Person Details</div>
+            <a href="../pages/form.html" class="add-button"><img src="/assets/icons/add-24px.svg" alt="">Add Person</a>
+        </div>
+        <div class="table-main">
+            <table id="display" class="table">
+            </table>
+        </div>
+    </div>
     <script src="../js/home.js"></script>
     <script src="../js/form.js"></script>
     <script src="../js/siteProperties.js"></script>
