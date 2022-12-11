@@ -25,14 +25,13 @@ const createInnerHtml = () => {
     <td>${person._phoneNumber}</td>
     <td>
         <img id="${person._name}" onclick="remove(this)" alt="delete" src="../assets/icons/delete-black-18dp.svg">
-        <img id="${person._id}" alt="edit" onclick="update(this)" src="../assets/icons/create-black-18dp.svg">
+        <img id="${person._name}" alt="edit" onclick="update(this)" src="../assets/icons/create-black-18dp.svg">
     </td>
  </tr>
     `;
     }
     document.querySelector("#display").innerHTML = innerHtml;
 };
-
 const remove = (node) => {
     let personData = addressBookList.find(perData => perData._name == node.id);
     if (!personData) return;
@@ -41,3 +40,10 @@ const remove = (node) => {
     localStorage.setItem("AddressBookList", JSON.stringify(addressBookList));
     createInnerHtml();
 }
+
+const update = (node) => {
+    let person = addressBookList.find((per) => per._name == node.id);
+    if (!person) return;
+    localStorage.setItem("editEmp", JSON.stringify(person));
+    window.location.replace(siteProperties.addAddressBookPage);
+};
