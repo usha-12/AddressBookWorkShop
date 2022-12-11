@@ -21,10 +21,51 @@
     <div id="formId" class="form-content">
         <form id="form" class="form" action="#" onreset="resetForm()" onsubmit="saveForm()">
             <div class="form-head">
-                <div class="form-text">Person Address Form</div>
-                <div>
-                    <a href="../pages/home.html"><img class="cancel-img" src="/assets/images/cancel.jpeg.jpeg" alt="cancel"></a>
+                <div class="form-head-text">Person Address Form</div>
+                <a href="../pages/home.html"><img class="cancel-img" src="/assets/images/cancel.jpeg.jpeg" alt="cancel"></a>
+            </div>
+            <div class="row-content">
+                <label class="label text" for="name">Full Name</label>
+                <input class="input" id="name" name="name" type="text" required/>
+                <error-output class="text-error" for="name"></error-output>
+            </div>
+
+            <div class="row-content">
+                <label class="label text" for="address">Address</label>
+                <textarea class="input" id="address" name="address" placeholder="" style="height: 50px;"> </textarea>
+                <error-output class="address-error" for="address"></error-output>
+            </div>
+            <div class="select-box">
+                <div name="city" id="city" class="city">
+                    <label for="city" class="label text">City</label>
+                    <select class="select" name="city" id="city">
+                        <option selected disabled>Select City</option>
+                        <option value="Vns">Varanasi</option>
+                        <option value="Gzd">Gaziyabad</option>
+                        <option value="Blr">Bangalore</option>
+                        <option value="Gkp">Gorkhpur</option>
+                        <option value="Del">Delhi</option>
+                    </select>
                 </div>
+                <div name="state" id="state" class="state">
+                    <label for="state" class="label text">State</label>
+                    <select class="select" name="state" id="state">
+                        <option selected disabled>Select State</option>
+                        <option value="UP">Uttar Pradesh</option>
+                        <option value="KA">Karnataka</option>
+                        <option value="BP">Bihar</option>
+                        <option value="Mg">Mangalore</option>
+                    </select>
+                </div>
+                <div name="zip" id="zip" class="zip">
+                    <label for="zip" class="label text">Zip Code</label>
+                    <input class="select" type="number" name="zip" id="zip">
+                </div>
+            </div>
+            <div class="row-content">
+                <label class="label text" for="phoneNo">Phone Number</label>
+                <input class="input" id="phoneNo" name="phoneNo" type="text" required>
+                <error-output class="phoneNo-error" for="phoneNo"></error-output>
             </div>
         </form>
     </div>
